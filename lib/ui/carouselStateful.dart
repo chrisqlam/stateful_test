@@ -43,6 +43,8 @@ class CardIndexState extends State<CardIndex> {
             ),
             flex: 0),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             RaisedButton(
               child: Text('Soyeon'),
@@ -69,6 +71,8 @@ class CardIndexState extends State<CardIndex> {
         ),
         Center(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             RaisedButton(
               child: Text('Minnie'),
