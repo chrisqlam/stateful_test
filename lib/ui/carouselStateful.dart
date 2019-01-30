@@ -3,7 +3,6 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:stateful_test/model/members.dart';
 import 'package:stateful_test/ui/memberCard.dart';
 
-
 class CardIndex extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -21,11 +20,12 @@ class CardIndexState extends State<CardIndex> {
     return Column(
       children: <Widget>[
         Expanded(
+          flex: 1,
           child: Swiper(
             itemBuilder: (BuildContext context, index) {
               return MemberCard(members[index]);
             },
-            itemCount: 6,
+            itemCount: members.length,
             viewportFraction: 0.8,
             scale: 0.9,
             loop: false,
@@ -37,69 +37,66 @@ class CardIndexState extends State<CardIndex> {
             },
           ),
         ),
-        Expanded(
-            child: Text(
-              _currentIndex.toString(),
-            ),
-            flex: 0),
+        Container(
+            child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+              Text(
+                _currentIndex.toString(),
+              ),
+            ])),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             RaisedButton(
-              child: Text('Soyeon'),
-              color: Colors.purple,
-              onPressed: () {
-                _controller.move(0);
-              }
-            ),
+                child: Text('Soyeon'),
+                color: Colors.purple,
+                onPressed: () {
+                  _controller.move(0,animation: false);
+                }),
             RaisedButton(
-              child: Text('Miyeon'),
-              color: Colors.purple,
-              onPressed: () {
-                _controller.move(1);
-              }
-            ),
+                child: Text('Miyeon'),
+                color: Colors.purple,
+                onPressed: () {
+                  _controller.move(1,animation: false);
+                }),
             RaisedButton(
-              child: Text('Yuqi'),
-              color: Colors.purple,
-              onPressed: () {
-                _controller.move(2);
-              }
-            ),
+                child: Text('Yuqi'),
+                color: Colors.purple,
+                onPressed: () {
+                  _controller.move(2,animation: false);
+                }),
           ],
         ),
         Center(
-        child: Row(
+            child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             RaisedButton(
-              child: Text('Minnie'),
-              color: Colors.purple,
-              onPressed: () {
-                _controller.move(3);
-              }
-            ),
+                child: Text('Minnie'),
+                color: Colors.purple,
+                onPressed: () {
+                  _controller.move(3,animation: false);
+                }),
             RaisedButton(
-              child: Text('Soojin'),
-              color: Colors.purple,
-              onPressed: () {
-                _controller.move(4);
-              }
-            ),
+                child: Text('Soojin'),
+                color: Colors.purple,
+                onPressed: () {
+                  _controller.move(4,animation: false);
+                }),
             RaisedButton(
-              child: Text('Shuhua'),
-              color: Colors.purple,
-              onPressed: () {
-                _controller.move(5);
-              }
-            ),
+                child: Text('Shuhua'),
+                color: Colors.purple,
+                onPressed: () {
+                  _controller.move(5,animation: false);
+                }),
           ],
-        )
-        )
+        ))
       ],
     );
   }
-  
 }
