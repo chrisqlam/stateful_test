@@ -38,15 +38,18 @@ class CardIndexState extends State<CardIndex> {
           ),
         ),
         Container(
-            child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text("CURRENT CAROUSEL POSITION:"),
               Text(
                 _currentIndex.toString(),
               ),
-            ])),
+            ],
+          ),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
@@ -55,47 +58,48 @@ class CardIndexState extends State<CardIndex> {
                 child: Text('Soyeon'),
                 color: Colors.purple,
                 onPressed: () {
-                  _controller.move(0,animation: false);
+                  _controller.move(0, animation: false);
                 }),
             RaisedButton(
                 child: Text('Miyeon'),
                 color: Colors.purple,
                 onPressed: () {
-                  _controller.move(1,animation: false);
+                  _controller.move(1, animation: false);
                 }),
             RaisedButton(
                 child: Text('Yuqi'),
                 color: Colors.purple,
                 onPressed: () {
-                  _controller.move(2,animation: false);
+                  _controller.move(2, animation: false);
                 }),
           ],
         ),
         Center(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            RaisedButton(
-                child: Text('Minnie'),
-                color: Colors.purple,
-                onPressed: () {
-                  _controller.move(3,animation: false);
-                }),
-            RaisedButton(
-                child: Text('Soojin'),
-                color: Colors.purple,
-                onPressed: () {
-                  _controller.move(4,animation: false);
-                }),
-            RaisedButton(
-                child: Text('Shuhua'),
-                color: Colors.purple,
-                onPressed: () {
-                  _controller.move(5,animation: false);
-                }),
-          ],
-        ))
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              RaisedButton(
+                  child: Text('Minnie'),
+                  color: Colors.purple,
+                  onPressed: () {
+                    _controller.move(3, animation: false);
+                  }),
+              RaisedButton(
+                  child: Text('Soojin'),
+                  color: Colors.purple,
+                  onPressed: () {
+                    _controller.move(4, animation: false);
+                  }),
+              RaisedButton(
+                  child: Text('Shuhua'),
+                  color: Colors.purple,
+                  onPressed: () {
+                    _controller.move(5, animation: false);
+                  }),
+            ],
+          ),
+        )
       ],
     );
   }

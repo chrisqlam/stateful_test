@@ -22,40 +22,35 @@ class MemberCard extends StatelessWidget {
                 new Row(
                   children: <Widget>[
                     new Expanded(
-                        child: new SizedBox(
-                            height: 190.0,
-                            child: new Stack(
-                              children: <Widget>[
-                                Positioned.fill(
-                                  child: new Image.asset(
-                                    member.img,
-                                    fit: BoxFit.cover,
-                                  ),
+                      child: new SizedBox(
+                        height: 190.0,
+                        child: new Stack(
+                          children: <Widget>[
+                            Positioned.fill(
+                              child: new Image.asset(
+                                member.img,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Positioned(
+                              top: 10.0,
+                              right: 10.0,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  member.name,
+                                  style: TextStyle(
+                                      fontSize: 30.0, color: Colors.white),
                                 ),
-                                Positioned(
-                                    top: 10.0,
-                                    right: 10.0,
-                                    child: FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        alignment: Alignment.centerLeft,
-                                        child: Text(member.name,
-                                            style: TextStyle(
-                                                fontSize: 30.0,
-                                                color: Colors.white))))
-                              ],
-                            )))
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
-                new ButtonTheme.bar(
-                    child: ButtonBar(
-                  alignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    FlatButton(
-                        child: Text('SEE DETAILS'),
-                        textColor: Colors.purpleAccent,
-                        onPressed: () {})
-                  ],
-                )),
               ],
             ),
           ),
